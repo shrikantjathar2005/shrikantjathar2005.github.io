@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Shrikant Jathar monogram</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7dc4ff" />
+      <stop offset="1" stop-color="#9f8bff" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0c1020" />
+  <path d="M18 19h28v6H24v7h16v6H24v7h22v6H18z" fill="url(#g)" />
+</svg>
