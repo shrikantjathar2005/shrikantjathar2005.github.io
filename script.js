@@ -4,9 +4,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Theme Management (Blueprint Dark vs Blueprint Light Paper)
+  // 1. Theme Management (Default: Light Architectural Paper Mode)
   const themeToggle = document.getElementById('theme-toggle');
   const root = document.documentElement;
+
+  // Clear any previous dark mode set during automated tests so user gets default light mode
+  if (localStorage.getItem('bp-theme') === 'dark' && !sessionStorage.getItem('user-picked-theme')) {
+    localStorage.removeItem('bp-theme');
+  }
 
   const currentTheme = () => root.getAttribute('data-theme') || 'light';
 
@@ -14,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     root.setAttribute('data-theme', theme);
     try {
       localStorage.setItem('bp-theme', theme);
+      sessionStorage.setItem('user-picked-theme', 'true');
     } catch (e) {}
   };
 
