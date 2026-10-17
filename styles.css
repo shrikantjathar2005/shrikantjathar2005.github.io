@@ -363,17 +363,27 @@ a {
 .portrait {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1.08;
   background: var(--paper-2);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
   padding: 16px 16px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 .portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 6%;
   display: block;
+  filter: var(--photo);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+.portrait:hover img {
+  transform: scale(1.02);
+  filter: none;
 }
 
 /* Architectural Crop Marks */
