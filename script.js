@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {}
   };
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  const themeToggles = document.querySelectorAll('#theme-toggle, .mobile-theme-btn');
+  themeToggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
       const nextTheme = currentTheme() === 'dark' ? 'light' : 'dark';
       setTheme(nextTheme);
     });
-  }
+  });
 
   // 2. Mobile Navigation Toggle
   const header = document.querySelector('.hd');
@@ -36,7 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.hd-nav a');
 
   if (menuToggle && header) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = header.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
@@ -46,6 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && header.classList.contains('open')) {
+        header.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close mobile menu on clicking outside
+    document.addEventListener('click', (e) => {
+      if (header.classList.contains('open') && !header.contains(e.target)) {
+        header.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
