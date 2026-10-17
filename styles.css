@@ -230,6 +230,7 @@ a {
   display: flex;
   align-items: baseline;
   gap: 12px;
+  flex-shrink: 0;
 }
 .brand-name {
   font-family: var(--f-display);
@@ -237,6 +238,7 @@ a {
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 .brand-role {
   font-family: var(--f-mono);
@@ -273,6 +275,10 @@ a {
 }
 .hd-nav a.active .num {
   color: var(--accent);
+}
+
+.nav-extra {
+  display: none;
 }
 
 .hd-actions {
