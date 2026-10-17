@@ -246,6 +246,7 @@ a {
   border: 1px solid var(--line);
   padding: 2px 7px;
   border-radius: 3px;
+  white-space: nowrap;
 }
 
 .hd-nav {
@@ -1346,4 +1347,8 @@ figcaption .label {
   .exp-foot {
     grid-template-columns: 1fr;
   }
+  .brand-role {
+    display: none;
+  }
 }
+
