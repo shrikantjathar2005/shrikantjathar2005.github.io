@@ -3,21 +3,19 @@
    Inspired by hire-aj.space engineering schematic UI/UX
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
-
 :root {
   --paper: #f6f4ef;
   --paper-2: #eeebe3;
   --node: #fbfaf7;
   --ink: #10204a;
   --ink-2: #33415f;
-  --muted: #5d6883;
+  --muted: #4a556e;
   --line: rgba(16, 32, 74, 0.22);
   --line-2: rgba(16, 32, 74, 0.1);
   --grid: rgba(16, 32, 74, 0.045);
-  --accent: #c2410c;
-  --accent-soft: rgba(194, 65, 12, 0.12);
-  --accent-glow: rgba(194, 65, 12, 0.25);
+  --accent: #b43806;
+  --accent-soft: rgba(180, 56, 6, 0.12);
+  --accent-glow: rgba(180, 56, 6, 0.25);
   --photo: grayscale(1) contrast(1.04);
   --f-display: 'Archivo', system-ui, -apple-system, sans-serif;
   --f-text: 'Inter', system-ui, -apple-system, sans-serif;
@@ -362,7 +360,7 @@ a {
 
 .portrait {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--line-2);
   background: var(--paper);
   margin: 0 24px 0 0;
@@ -371,14 +369,16 @@ a {
   align-items: flex-end;
   justify-content: center;
 }
-.portrait img {
+.portrait img, .portrait picture {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 6%;
-  filter: var(--photo);
-  padding: 16px 16px 0;
   display: block;
+}
+.portrait img {
+  object-fit: cover;
+  object-position: 50% 12%;
+  filter: var(--photo);
+  padding: 12px 12px 0;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 .portrait:hover img {
