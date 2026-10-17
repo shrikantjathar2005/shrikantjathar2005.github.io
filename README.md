@@ -1,5 +1,9 @@
 # Shrikant Jathar Portfolio
 
+<p align="center">
+  <a href="https://shrikantjathar2005.github.io/" target="_blank" rel="noopener noreferrer" style="display:inline-block;background-color:#0366d6;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600">View Portfolio</a>
+</p>
+
 Recruiter-focused one-page portfolio for **Shrikant Jathar (AI Engineer)**.
 
 ## Local preview
